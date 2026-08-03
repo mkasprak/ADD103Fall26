@@ -1,0 +1,242 @@
+<div class="main-content" lang="en">
+    <div
+        style="max-width: 1200px; margin: 0 auto; background-color: #ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333333; border-top: 10px solid #D1A153; border-radius: 8px; overflow: hidden;">
+        <header style="background-color: #582c83; color: #ffffff; padding: 30px;">
+            <h2 style="margin: 0; font-size: 2rem; color: #ffffff;">Week 3B: HTML Tables &amp; Tabular Layouts</h2>
+            <div style="font-size: 1.1rem; margin-top: 5px;">ADD 103: Introduction to Web Design</div>
+        </header>
+        <div
+            style="background-color: #f0f7ff; border-bottom: 1px solid #cce5ff; padding: 15px 30px; font-size: 1rem; color: #004085; display: flex; align-items: center;">
+            <span style="font-size: 1.2rem; margin-right: 10px;"><span role="img"
+                    aria-label="Direct Hit">🎯</span></span> <span><strong>Learning Objective Alignment:</strong>
+                Tabular Data (LO1) &amp; Styling (LO2) &mdash; "Design accessible HTML data tables containing
+                column-scoped and row-scoped th header cells, implement cell spanning using colspan, and style borders
+                using external CSS rules."</span>
+        </div>
+        <div style="background-color: #f5ecd2; color: #582c83; padding: 10px; text-align: center; font-size: 1.05rem;">
+            ⏱️ Time: 1.5h Study / 2.5h Project | 🏆 Points: 20 | 📅 Due: Sunday 11:59PM</div>
+        <div style="background-color: #faf7f0; border-bottom: 1px solid #eee; padding: 25px 30px;">
+            <h3
+                style="color: #582c83; margin-top: 0; margin-bottom: 10px; font-size: 1.25rem; border-left: 4px solid #D1A153; padding-left: 10px;">
+                📖 Required Textbook Readings</h3>
+            <p style="margin: 0 0 12px 0; font-size: 0.95rem; color: #555;">You must complete the following tutorial
+                readings on W3Schools before starting this lesson:</p>
+            <ul style="margin: 0; padding-left: 20px; font-size: 0.95rem; line-height: 1.7;">
+                <li style="margin-bottom: 10px;"><span role="img" aria-label="Link Symbol">🔗</span> <a
+                        style="color: #582c83; text-decoration: none;"
+                        href="https://www.w3schools.com/html/html_tables.asp" target="_blank" rel="noopener">W3Schools:
+                        HTML Tables Basic</a></li>
+                <li style="margin-bottom: 10px;"><span role="img" aria-label="Link Symbol">🔗</span> <a
+                        style="color: #582c83; text-decoration: none;"
+                        href="https://www.w3schools.com/html/html_table_colspan_rowspan.asp" target="_blank"
+                        rel="noopener">W3Schools: HTML Table Colspan &amp; Rowspan</a></li>
+                <li style="margin-bottom: 10px;"><span role="img" aria-label="Link Symbol">🔗</span> <a
+                        style="color: #582c83; text-decoration: none;"
+                        href="https://www.w3schools.com/css/css_table.asp" target="_blank" rel="noopener">W3Schools: CSS
+                        Table Styling</a></li>
+            </ul>
+        </div>
+        <div style="padding: 30px; border-bottom: 1px solid #eee;">
+            <h2
+                style="color: #582c83; border-left: 5px solid #D1A153; padding-left: 15px; margin-top: 0; font-size: 1.6rem;">
+                Overview</h2>
+            <p>Tables organize tabular data in grids of rows and columns. In this lesson, we cover **HTML Tables** in
+                depth, focusing on building accessible data grids using standard semantic tags, cell spanning
+                attributes, and custom cell layouts.</p>
+            <p>You will learn how to structure tables using the <code>&lt;thead&gt;</code> and
+                <code>&lt;tbody&gt;</code> tags, write column-scoped (<code>scope="col"</code>) headers, use the
+                <code>colspan</code> attribute to merge cells across multiple columns, and embed assets like images
+                inside individual table cells.
+            </p>
+            <h3 style="color: #582c83; font-family: Arial, sans-serif; margin-top: 25px;"><span role="img"
+                    aria-label="Movie Camera">🎥</span> Watch the Lesson</h3>
+            <div
+                style="background-color: #f4f4f4; padding: 20px; text-align: center; color: #666666; margin: 20px 0px; border: 1px dashed #cccccc;">
+                <strong>🎥 Watch the Lesson: Designing Calendars and Merged Layouts in HTML Tables<br />🔗 <a
+                        class="inline_disabled" title="Link"
+                        href="https://mkasprak.github.io/ADD103Fall26/week_03/sample_b/index.html" target="_blank"
+                        rel="noopener">Finished Sample Table (right-click on page to view source)</a><br /><br />Extra
+                    Credit - I make a mistake in the video that causes a lot of problems. I show you how I solved it (I
+                    used AI to help find the mistake), but I didn't really explain in detail why it was a mistake.
+                    Explain what the mistake was and why it was a mistake in the Canvas comments when you hand in your
+                    project for 5 extra credit points!!!</strong>
+            </div>
+            <details
+                style="background-color: #f4f4f4; margin: 15px 0px; border-radius: 4px; padding: 10px 15px; border: 1px solid #cccccc;">
+                <summary style="color: #582c83; cursor: pointer; font-size: 1.05rem;">🎥 3b Setup</summary>
+                <div style="padding: 15px 0 5px 0; text-align: center;">
+                    <p style="margin: 0px 0px 15px; color: #555555; font-size: 0.95rem; text-align: center;">In this
+                        video, I give you an overview of the lesson, and I set up the files and folders for the
+                        demo.&nbsp; &nbsp;(1:25)</p>
+                    <iframe class="lti-embed"
+                        style="width: 720px; height: 405px; max-width: 100%; border: medium none currentcolor;"
+                        title="3b Setup"
+                        src="https://mchenry.instructure.com/courses/1490647/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fmchenry.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3Dd81c8fde-a503-4233-b609-b49b01326052"
+                        width="720" height="405" loading="lazy" allowfullscreen="allowfullscreen"
+                        webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"
+                        allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *; clipboard-write *; display-capture *; fullscreen *"></iframe>
+                </div>
+            </details>
+            <details
+                style="background-color: #f4f4f4; margin: 15px 0px; border-radius: 4px; padding: 10px 15px; border: 1px solid #cccccc;">
+                <summary style="color: #582c83; cursor: pointer; font-size: 1.05rem;">🎥 3b Table Setup</summary>
+                <div style="padding: 15px 0 5px 0; text-align: center;">
+                    <p style="margin: 0px 0px 15px; color: #555555; font-size: 0.95rem; text-align: center;">
+                        [Description and runtime placeholder]</p>
+                    <iframe class="lti-embed"
+                        style="width: 720px; height: 405px; max-width: 100%; border: medium none currentcolor;"
+                        title="3b Table Setup"
+                        src="https://mchenry.instructure.com/courses/1490647/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fmchenry.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3D7e109791-383c-4b80-b2ea-b49b01329904"
+                        width="720" height="405" loading="lazy" allowfullscreen="allowfullscreen"
+                        webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"
+                        allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *; clipboard-write *; display-capture *; fullscreen *"></iframe>
+                </div>
+            </details>
+            <details
+                style="background-color: #f4f4f4; margin: 15px 0px; border-radius: 4px; padding: 10px 15px; border: 1px solid #cccccc;">
+                <summary style="color: #582c83; cursor: pointer; font-size: 1.05rem;">🎥 3b Initial Table Styling
+                </summary>
+                <div style="padding: 15px 0 5px 0; text-align: center;">
+                    <p style="margin: 0px 0px 15px; color: #555555; font-size: 0.95rem; text-align: center;">In this
+                        video, I create the initial styles for the table. I make a mistake that causes problems
+                        later...<br />I leave mistakes because I think seeing that I still make mistakes after over 25
+                        years of coding is good and realistic. I also show you how I use AI to help me solve
+                        problems.&nbsp; &nbsp;(5:48)</p>
+                    <iframe class="lti-embed"
+                        style="width: 720px; height: 405px; max-width: 100%; border: medium none currentcolor;"
+                        title="3b Initial Table Styling"
+                        src="https://mchenry.instructure.com/courses/1490647/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fmchenry.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3D28070b81-059b-4810-bc5b-b49b0132bc79"
+                        width="720" height="405" loading="lazy" allowfullscreen="allowfullscreen"
+                        webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"
+                        allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *; clipboard-write *; display-capture *; fullscreen *"></iframe>
+                </div>
+            </details>
+            <details
+                style="background-color: #f4f4f4; margin: 15px 0px; border-radius: 4px; padding: 10px 15px; border: 1px solid #cccccc;">
+                <summary style="color: #582c83; cursor: pointer; font-size: 1.05rem;">🎥 3b Table Headers - solving
+                    problem</summary>
+                <div style="padding: 15px 0 5px 0; text-align: center;">
+                    <p style="margin: 0px 0px 15px; color: #555555; font-size: 0.95rem; text-align: center;">This is
+                        where I discover my error after several minutes of going down the wrong path. I ask AI what is
+                        wrong with my code. Extra credit if you explain what I did wrong AND why it was wrong. I don't
+                        really make that clear; you will need to look it up.</p>
+                    <iframe class="lti-embed"
+                        style="width: 720px; height: 405px; max-width: 100%; border: medium none currentcolor;"
+                        title="3b Table Headers - solving problem"
+                        src="https://mchenry.instructure.com/courses/1490647/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fmchenry.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3D0dcf2a56-de68-47f7-8fec-b49b0132e76a"
+                        width="720" height="405" loading="lazy" allowfullscreen="allowfullscreen"
+                        webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"
+                        allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *; clipboard-write *; display-capture *; fullscreen *"></iframe>
+                </div>
+            </details>
+            <details
+                style="background-color: #f4f4f4; margin: 15px 0px; border-radius: 4px; padding: 10px 15px; border: 1px solid #cccccc;">
+                <summary style="color: #582c83; cursor: pointer; font-size: 1.05rem;">🎥 3b Finishing the table
+                </summary>
+                <div style="padding: 15px 0 5px 0; text-align: center;">
+                    <p style="margin: 0px 0px 15px; color: #555555; font-size: 0.95rem; text-align: center;">In this
+                        video, I finish the table, show you how to use colspan and rowspan, and finish styling.&nbsp;
+                        &nbsp;(12:34)</p>
+                    <iframe class="lti-embed"
+                        style="width: 720px; height: 405px; max-width: 100%; border: medium none currentcolor;"
+                        title="3b Finishing the table"
+                        src="https://mchenry.instructure.com/courses/1490647/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2Fmchenry.hosted.panopto.com%2FPanopto%2FLTI%2FLTI.aspx%3Fcustom_context_delivery%3D76c8be48-7ad6-42dc-9a90-b49b01331426"
+                        width="720" height="405" loading="lazy" allowfullscreen="allowfullscreen"
+                        webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"
+                        allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *; clipboard-write *; display-capture *; fullscreen *"></iframe>
+                </div>
+            </details>
+        </div>
+    </div>
+    <div style="padding: 30px; border-bottom: 1px solid #eee;">
+        <h2
+            style="color: #582c83; border-left: 5px solid #D1A153; padding-left: 15px; margin-top: 0; font-size: 1.6rem;">
+            Assignment Directions</h2>
+        <ol style="padding-left: 20px; line-height: 1.8;">
+            <li><strong>Repository Setup:</strong> Open your local course folder inside VS Code and navigate to the
+                <code>week_03</code> directory. Create a new subfolder named <code>week_03b</code>.
+            </li>
+            <li><strong>HTML File Creation:</strong> Create an <code>index.html</code> file within your
+                <code>week_03b</code> folder. Include the standard HTML5 boilerplate markup (DOCTYPE, head, body).
+            </li>
+            <li><strong>CSS File Link:</strong> Create a <code>style.css</code> file in the same directory and link it
+                inside the <code>&lt;head&gt;</code> of your HTML file.</li>
+            <li><strong>Table Structure:</strong> Build a calendar or scheduled layout table containing:
+                <ul>
+                    <li>A <code>&lt;thead&gt;</code> section with <code>&lt;th scope="col"&gt;</code> header elements
+                        for days of the week or time slots.</li>
+                    <li>A <code>&lt;tbody&gt;</code> containing at least 4 rows of data.</li>
+                    <li>At least one merged cell using the <code>colspan</code> attribute to span across multiple
+                        columns.</li>
+                    <li>At least one embedded image asset placed neatly inside a table data cell
+                        (<code>&lt;td&gt;</code>).</li>
+                </ul>
+            </li>
+            <li><strong>CSS Styling:</strong> In your <code>style.css</code> file, apply borders using
+                <code>border-collapse: collapse;</code>, custom cell padding, background colors, and header typography.
+            </li>
+            <li><strong>Publish &amp; Submit:</strong> Commit and push your changes to your GitHub repository. Ensure
+                your GitHub Pages site updates, and submit your live GitHub Pages URL in Canvas.</li>
+        </ol>
+    </div>
+    <div style="padding: 30px;">
+        <h2
+            style="color: #582c83; border-left: 5px solid #D1A153; padding-left: 15px; margin-top: 0; font-size: 1.6rem;">
+            Grading Rubric</h2>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.95rem;">
+            <thead>
+                <tr style="background-color: #582c83; color: #ffffff; text-align: left;">
+                    <th style="padding: 12px; border: 1px solid #dddddd;" scope="col">Criteria</th>
+                    <th style="padding: 12px; border: 1px solid #dddddd;" scope="col">Proficient (Full Points)</th>
+                    <th style="padding: 12px; border: 1px solid #dddddd;" scope="col">Developing</th>
+                    <th style="padding: 12px; border: 1px solid #dddddd;" scope="col">Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 12px; border: 1px solid #dddddd;"><strong>HTML Table Structure</strong></td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">Correct use of <code>&lt;table&gt;</code>,
+                        <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tr&gt;</code>,
+                        <code>&lt;th&gt;</code>, and <code>&lt;td&gt;</code> tags with appropriate <code>scope</code>
+                        attributes.
+                    </td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">Missing semantic structural tags (like
+                        <code>&lt;thead&gt;</code>) or missing header <code>scope</code> attributes.
+                    </td>
+                    <td style="padding: 12px; border: 1px solid #dddddd; text-align: center;"><strong>5 pts</strong>
+                    </td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;"><strong>Cell Merging &amp; Embedded
+                            Assets</strong></td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">Successfully implements <code>colspan</code>
+                        to span multiple columns cleanly and correctly embeds an image asset inside a cell.</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">Cell alignment broken due to incorrect
+                        <code>colspan</code> count or missing image element.
+                    </td>
+                    <td style="padding: 12px; border: 1px solid #dddddd; text-align: center;"><strong>5 pts</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px; border: 1px solid #dddddd;"><strong>CSS Table Styling</strong></td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">Applies <code>border-collapse</code>, distinct
+                        header styling, padding, and subtle hover or background highlights via external CSS.</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">Minimal styling applied, uses inline styles
+                        instead of external CSS, or table lacks padding and borders.</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd; text-align: center;"><strong>5 pts</strong>
+                    </td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;"><strong>Publishing &amp; Valid
+                            Submission</strong></td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">Page is correctly published via GitHub Pages,
+                        URL is live and functioning, and code passes HTML/CSS validation without errors.</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">URL submitted is incorrect, page fails to
+                        render properly, or code contains major syntax errors.</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd; text-align: center;"><strong>5 pts</strong>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
