@@ -1,28 +1,43 @@
 <!DOCTYPE html>
+<!-- Declares this is an HTML5 document — always the first line -->
 <html lang="en">
+<!-- lang="en" tells browsers and screen readers the page language -->
 
 <head>
+    <!-- <head> holds metadata — nothing here is visible on the page -->
     <meta charset="UTF-8">
+    <!-- UTF-8 supports all characters and emoji -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the page scale correctly on mobile devices -->
     <title>Week 3A</title>
+    <!-- Text shown in the browser tab -->
     <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <!-- favicon: the small icon shown in the browser tab next to the title -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Links our external CSS file; keeps styling separate from structure -->
 </head>
 
 <body>
+    <!-- All visible content lives inside <body> -->
     <h1>Demo Selectors, images, favicon</h1>
 
     <h2>Images</h2>
     <p>You need to put in the img tag, the location of the image, and alternative text.</p>
+    <!-- class="img-center" connects this element to the .img-center rule in styles.css -->
     <img src="images/puppy.jpg" alt="Puppy" class="img-center">
 
+    <!-- id="red" — an ID is unique; only ONE element on the page should use it -->
+    <!-- In CSS, IDs are targeted with #red (hash symbol) -->
     <div id="red">
         <p>all the text in this div will be red.</p>
     </div>
 
+    <!-- class="pretty-center" — a class can be reused on multiple elements -->
+    <!-- In CSS, classes are targeted with .pretty-center (dot symbol) -->
     <div class="pretty-center">
         <p>Here we properly center text.</p>
         <p>Don't use text-align center</p>
+        <!-- <span> is an inline container — used here to apply .highlighter mid-paragraph -->
         <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ut autem necessitatibus veritatis,
                 distinctio, deleniti eaque culpa accusantium explicabo voluptates aut doloribus ad nam! Enim totam
                 maxime recusandae ab iste?</span><span class="highlighter">Aliquid eius aut similique, sed quia nihil,
@@ -33,6 +48,7 @@
                 temporibus.</span></p>
     </div>
     <p><a href="../../index.html">Home</a></p>
+    <!-- ../../ goes up two folder levels to reach the root index.html -->
 </body>
 </body>
 

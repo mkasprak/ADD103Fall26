@@ -1,18 +1,31 @@
 <!DOCTYPE html>
+<!-- Declares this is an HTML5 document — always the first line -->
 <html lang="en">
+<!-- lang="en" tells browsers and screen readers the page language -->
 
 <head>
+    <!-- <head> holds metadata — nothing here is visible on the page -->
     <meta charset="UTF-8">
+    <!-- UTF-8 supports all characters and emoji -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the page scale correctly on mobile devices -->
     <title>Tables</title>
+    <!-- Text shown in the browser tab -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Links our external CSS file; keeps styling separate from structure -->
 </head>
 
 <body>
+    <!-- All visible content lives inside <body> -->
     <h1>Table styling!</h1>
     <h2>Weekly Schedule</h2>
+
+    <!-- <table> = the container for all table content -->
+    <!-- Tables are built row by row: <tr> wraps each row; <th> or <td> go inside -->
     <table>
         <!-- tr>th*7 - emmet code for table -->
+
+        <!-- Header row: <th> = table header cell (bold + centered by default) -->
         <tr>
             <th></th>
             <th>Sunday</th>
@@ -23,6 +36,7 @@
             <th>Friday</th>
             <th>Saturday</th>
         </tr>
+        <!-- <td> = standard data cell; <th> in the first column acts as a row label -->
         <tr>
             <th>8:00 AM</th>
             <td></td>
@@ -36,6 +50,7 @@
         <tr>
             <th>9:00 AM</th>
             <td></td>
+            <!-- colspan="4" merges this cell across 4 columns horizontally -->
             <td colspan="4" class="center-me"> Office Hours</td>
 
             <td></td>
@@ -44,6 +59,7 @@
         <tr>
             <th>10:00 AM</th>
             <td></td>
+            <!-- rowspan="2" stretches this cell down across 2 rows vertically -->
             <td rowspan="2" class="center-me">Web Development</td>
             <td></td>
             <td rowspan="2" class="center-me">Web Development</td>
@@ -54,6 +70,7 @@
         <tr>
             <th>11:00 AM</th>
             <td></td>
+            <!-- no Monday/Wednesday <td> here — those columns are occupied by the rowspan cells above -->
             <td></td>
             <td></td>
             <td></td>

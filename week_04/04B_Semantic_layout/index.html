@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- Declares this is an HTML5 document — always the first line -->
+<html lang="en">
+<!-- lang="en" tells browsers and screen readers the page language -->
+
+<head>
+    <!-- <head> holds metadata — nothing here is visible on the page -->
+    <meta charset="UTF-8">
+    <!-- UTF-8 supports all characters and emoji -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the page responsive on mobile devices -->
+    <title>Semantic Layout</title>
+    <!-- Text shown in the browser tab -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Links our external CSS file to this HTML page -->
+</head>
+
+<body>
+    <!-- <body> contains everything visible in the browser window -->
+
+    <!-- ==========================================
+         SEMANTIC ELEMENTS
+         Semantic tags describe their purpose,
+         unlike <div> which has no meaning.
+         This helps screen readers, search engines,
+         and other developers understand your code.
+    =========================================== -->
+
+    <!-- <header> = top banner / masthead of the page or a section -->
+    <header>
+        <h1>Masthead Section</h1>
+    </header>
+
+    <!-- <main> = the primary, unique content of the page (use only once) -->
+    <main>
+
+        <!-- <div> is a non-semantic block container — used here for layout only -->
+        <div class="column-card">
+            <!-- Hover over the term to see the tooltip — .tooltiptext is the hidden popup -->
+            <h2>Learn <span class="tooltip">CSS<span class="tooltiptext">Cascading Style Sheets</span></span></h2>
+            <p>Card content goes here.</p>
+        </div>
+
+        <div class="column-card">
+            <!-- Same tooltip pattern applied to a second term —  repetition reinforces the structure -->
+            <h2>Learn <span class="tooltip">HTML<span class="tooltiptext">HyperText Markup Language</span></span></h2>
+            <p>Card content goes here.</p>
+        </div>
+
+        <!-- <article> = self-contained content that makes sense on its own (bonus example) -->
+        <!-- Unlike <div>, <article> tells the browser this card could stand alone on any page -->
+        <article class="card">
+
+            <!-- <header> inside <article> = the heading area for this card only -->
+            <!-- Semantic elements can be nested; context determines their role -->
+            <header class="card-header">
+                <!-- alt text describes the image for screen readers and broken-image fallback -->
+                <img src="images/merifa26.png" alt="Meri Kasprak">
+                <h2>Meri Kasprak</h2>
+            </header>
+
+            <!-- <div> used here because no semantic element fits a generic body section -->
+            <div class="card-body">
+                <p>Meri has been teaching at McHenry County College for 27 years in various computer programming,
+                    Microsoft
+                    Office, animation, and web development classes.</p>
+            </div>
+
+            <!-- <footer> inside <article> = metadata or closing info for this card -->
+            <footer class="card-footer">
+                <p>Updated August 2026</p>
+            </footer>
+
+        </article>
+    </main>
+
+    <!-- <aside> = secondary content related to (but not part of) the main content -->
+    <!-- Common uses: sidebars, callout boxes, related links -->
+    <aside>
+        <h3>Side Notes</h3>
+        <p>Additional resources or quick links.</p>
+    </aside>
+
+    <!-- <footer> = bottom of the page; typically holds copyright, nav, or credits -->
+    <footer>
+        <p><a href="../../index.html">Back to Student Portal</a></p>
+    </footer>
+
+</body>
+
+</html>

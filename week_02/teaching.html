@@ -1,24 +1,45 @@
 <!doctype html>
+<!-- Declares this is an HTML5 document — always the first line -->
 <html lang="en">
+<!-- lang="en" tells browsers and screen readers the page language -->
 
 <head>
+  <!-- <head> holds metadata — nothing here is visible on the page -->
   <meta charset="UTF-8" />
+  <!-- UTF-8 supports all characters and emoji -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Makes the page scale correctly on mobile devices -->
   <title>Demo</title>
+  <!-- Text shown in the browser tab -->
 </head>
 
+<!-- style="" on <body> applies an inline background color to the whole page -->
+
 <body style="background-color: rgb(255, 255, 179)">
+
+  <!-- Heading hierarchy: h1–h6, largest to smallest; never skip levels -->
   <h1 style="color: rebeccapurple">Heading level 1</h1>
+  <!-- rebeccapurple is one of ~140 named CSS colors browsers recognize -->
   <h2>Heading level 2</h2>
   <h3>Heading level 3</h3>
   <h4>Heading level 4</h4>
   <h5>Heading level 5</h5>
   <h6>Heading level 6</h6>
+
+  <!-- <p> = paragraph; block-level element that always starts on a new line -->
   <p>This is a paragraph.</p>
+
+  <!-- <a> = anchor/hyperlink; href sets the destination URL or file path -->
+  <!-- <em> = emphasis; renders as italic and signals stress to screen readers -->
   <a href="https://www.mchenry.edu/events/2026/08/fall-semester-08-17.html"><em>Fall</em> Academic Calendar</a>
+
+  <!-- <hr> = horizontal rule / thematic divider — a void element with no closing tag -->
   <hr />
+
+  <!-- <img> is also a void element; src = path, alt = description, width = pixels -->
   <img src="puppy.jpg" alt="A cute puppy" width="400" />
   <p><a href="../index.html">Home</a></p>
+  <!-- ../ goes up one folder level to find index.html -->
 </body>
 <hr />
 </body>

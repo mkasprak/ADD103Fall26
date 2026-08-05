@@ -1,18 +1,32 @@
 <!doctype html>
+<!-- Declares this is an HTML5 document — always the first line -->
 <html lang="en">
+<!-- lang="en" tells browsers and screen readers the page language -->
 
 <head>
+  <!-- <head> holds metadata — nothing here is visible on the page -->
   <meta charset="UTF-8" />
+  <!-- UTF-8 supports all characters and emoji -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Makes the page scale correctly on mobile devices -->
   <title>Document</title>
+  <!-- Text shown in the browser tab -->
 </head>
 
+<!-- Inline style: style="" applies CSS directly to one element — useful for quick tests -->
+<!-- For real projects, move all styles to an external .css file -->
+
 <body style="background-color: rgb(12, 9, 9)">
+  <!-- rgb() defines a color by Red, Green, Blue values (each 0–255) -->
   <h1 style="color: yellow; font-weight: bold">Yellowstone</h1>
+  <!-- Multiple CSS properties inside one style="" are separated by semicolons -->
   <p style="text-align: center">
+    <!-- text-align: center horizontally centers inline content inside the block -->
     <img src="yellowstone.jpg" alt="Yellowstone" width="400" />
+    <!-- src = image file path; alt = fallback text for screen readers and broken images -->
   </p>
   <p style="color: rgb(234, 231, 231); font-size: 20px">
+    <!-- font-size in px sets a fixed size independent of the user's browser default -->
     I have really loved watching this show this summer. To like a TV show, I
     have to have a character (or more than one) to root for. In this show, I’m
     rooting for a lot of them. We are introduced to a sort of unambitious,
@@ -23,6 +37,7 @@
     important characters in the show.
   </p>
   <p><a href="../../index.html">Home</a></p>
+  <!-- ../../ goes up two folder levels to reach the root index.html -->
 </body>
 </body>
 

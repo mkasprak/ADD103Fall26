@@ -1,0 +1,120 @@
+/* ==========================================
+   UNIVERSAL RESET — always comes first
+   ========================================== */
+
+/* The * (asterisk) selector targets every single element on the page */
+* {
+    box-sizing: border-box;
+    /* border-box: padding and border are included in the element's total width/height.
+       Without this, adding padding would make elements wider than expected. */
+}
+
+
+/* ==========================================
+   CSS CUSTOM PROPERTIES (Variables)
+   Defined once, reused everywhere.
+   Change one value here to update the whole site.
+   ========================================== */
+
+:root {
+    /* :root targets the <html> element — the highest scope, so these variables
+       are available to every element on the page */
+    --brand-color: #582c83;
+    /* purple — use as: color: var(--brand-color); */
+    --gap: 1%;
+    /* consistent spacing value */
+    --card-radius: 8px;
+    /* reusable corner rounding */
+}
+
+
+/* ==========================================
+   PAGE HEADER
+   ========================================== */
+
+header {
+    background-color: var(--brand-color);
+    /* consuming our CSS variable */
+    color: #fff;
+    padding: 20px 30px;
+}
+
+header h1 {
+    margin: 0;
+    /* desaturated shadow: x-offset y-offset blur color */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ==========================================
+   LAYOUT — COLUMN CARDS
+   Two side-by-side cards using inline-block.
+   ========================================== */
+
+.column-card {
+    display: inline-block;
+    /* sits side-by-side like words in a sentence */
+    vertical-align: top;
+    /* keeps cards top-aligned if content heights differ */
+    width: 48%;
+    /* two cards fit in one row with room for margins */
+    border: 1px solid #ddd;
+    border-radius: var(--card-radius);
+    padding: 20px;
+    margin: var(--gap);
+}
+
+/* h2 inside each card uses the brand-color variable — demonstrates reuse */
+.column-card h2 {
+    color: var(--brand-color);
+}
+
+
+/* ==========================================
+   INTERACTIVE CSS — TOOLTIP
+   Pure CSS interactivity using :hover.
+   No JavaScript needed!
+   ========================================== */
+
+/* The word that triggers the tooltip on hover */
+.tooltip {
+    position: relative;
+    /* establishes coordinate context for the tooltip popup */
+    display: inline-block;
+    border-bottom: 1px dashed black;
+    /* visual cue that this term has a definition */
+    cursor: help;
+    /* changes cursor to ? to hint at interactivity */
+}
+
+/* Descendant selector: only .tooltiptext INSIDE .tooltip is targeted */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    /* hidden by default; toggled on :hover below */
+    opacity: 0;
+    /* fully transparent by default (enables fade transition) */
+    width: 180px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+
+    /* Absolute positioning places the box relative to its .tooltip parent */
+    position: absolute;
+    bottom: 125%;
+    /* floats the popup above the word */
+    left: 50%;
+    margin-left: -90px;
+    /* half of width: centers the popup over the word */
+
+    transition: opacity 0.3s;
+    /* animates the fade-in over 0.3 seconds */
+}
+
+/* :hover pseudo-class — state change without JavaScript */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+    /* fades in — the transition property animates this */
+}
