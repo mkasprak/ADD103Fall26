@@ -1,5 +1,16 @@
 /* ==========================================
-   UNIVERSAL RESET — always comes first
+   STYLESHEET SECTION ORDER (standard convention)
+   1. Universal Reset   — fix browser defaults first
+   2. Custom Properties — declare variables before anything uses them
+   3. Base Styles       — plain element styles (body, code, a, headings)
+   4. Layout            — structural rules (header, main, aside, footer)
+   5. Components        — reusable patterns (cards, tooltips)
+   This order is deliberate: each section can safely reference what came before it.
+   ========================================== */
+
+
+/* ==========================================
+   1. UNIVERSAL RESET — fix browser defaults first
    ========================================== */
 
 /* The * (asterisk) selector targets every single element on the page */
@@ -11,8 +22,8 @@
 
 
 /* ==========================================
-   CSS CUSTOM PROPERTIES (Variables)
-   Defined once, reused everywhere.
+   2. CUSTOM PROPERTIES (Variables)
+   Declared here so every rule below can use them.
    Change one value here to update the whole site.
    ========================================== */
 
@@ -20,22 +31,55 @@
     /* :root targets the <html> element — the highest scope, so these variables
        are available to every element on the page */
     --brand-color: #582c83;
-    /* purple — use as: color: var(--brand-color); */
+    /* MCC purple */
+    --highlight: #D1A153;
+    /* MCC gold */
+    --light-text: #ffffff;
+    /* white — for text on dark backgrounds */
+    --dark-text: #222222;
+    /* near-black — easier on the eyes than pure #000 */
+    --font-body: Arial, Helvetica, sans-serif;
+    /* site-wide font stack */
     --gap: 1%;
     /* consistent spacing value */
     --card-radius: 8px;
     /* reusable corner rounding */
+    --border-color: #ddd;
+    /* muted grey for card borders */
+    --code-bg: #f0eaf7;
+    /* light purple tint for inline code */
+}
+
+/* ==========================================
+   3. BASE STYLES — plain element selectors, no classes
+   ========================================== */
+
+/* body is the broadest base element — set defaults here before any specific rules */
+body {
+    font-family: var(--font-body);
+    color: var(--dark-text);
+}
+
+/* <code> styling: light background tint makes inline code stand out from body text */
+code {
+    background-color: var(--code-bg);
+    color: var(--brand-color);
+    font-family: monospace;
+    /* overrides the inherited body font for code only */
+    padding: 2px 5px;
+    border-radius: 3px;
 }
 
 
 /* ==========================================
-   PAGE HEADER
+   4. LAYOUT — structural semantic elements
    ========================================== */
 
 header {
     background-color: var(--brand-color);
     /* consuming our CSS variable */
-    color: #fff;
+    color: var(--light-text);
+    /* using --light-text variable */
     padding: 20px 30px;
 }
 
@@ -45,20 +89,64 @@ header h1 {
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 }
 
+main {
+    font-family: var(--font-body);
+    /* explicit declaration — inherited from body, shown here for clarity */
+    padding: 20px 30px;
+    overflow: hidden;
+    /* contains floated children like <aside> so main doesn't collapse */
+}
+
+/* float: right pulls aside out of normal flow; surrounding content wraps to its left */
+aside {
+    float: right;
+    width: 25%;
+    background-color: var(--highlight);
+    color: var(--dark-text);
+    padding: 15px 20px;
+    margin: 0 0 20px 20px;
+    /* gap between aside and the content wrapping beside it */
+    border-radius: var(--card-radius);
+    border-left: 4px solid var(--brand-color);
+}
+
+footer {
+    background-color: var(--dark-text);
+    color: var(--light-text);
+    padding: 15px 30px;
+    text-align: center;
+}
+
+footer a {
+    color: var(--highlight);
+    /* gold links on dark footer stand out clearly */
+}
+
 
 /* ==========================================
-   LAYOUT — COLUMN CARDS
-   Two side-by-side cards using inline-block.
+   5. COMPONENTS — reusable patterns (cards, tooltips)
    ========================================== */
 
+/* COMPONENT: column layout cards (div-based) */
 .column-card {
+    /* display: block; */
+    /* ← try this: cards stack full-width, one per row */
     display: inline-block;
-    /* sits side-by-side like words in a sentence */
+    /* ← active: cards sit side-by-side like words in a sentence */
     vertical-align: top;
     /* keeps cards top-aligned if content heights differ */
-    width: 48%;
-    /* two cards fit in one row with room for margins */
-    border: 1px solid #ddd;
+
+    /* WHY DOES 48% BREAK?
+       48% × 2 cards = 96% — should fit with room to spare.
+       But inline-block treats the whitespace between HTML tags (spaces, newlines)
+       as a real character with real width. That invisible character pushes the
+       second card onto a new line.
+       Fix: drop to 47% so the whitespace character has room to exist. */
+    /* width: 48%; */
+    /* ← BROKEN: try uncommenting this to see the wrap */
+    width: 47%;
+    /* ← FIX: 47% leaves room for the whitespace character */
+    border: 1px solid var(--border-color);
     border-radius: var(--card-radius);
     padding: 20px;
     margin: var(--gap);
@@ -70,13 +158,35 @@ header h1 {
 }
 
 
-/* ==========================================
-   INTERACTIVE CSS — TOOLTIP
-   Pure CSS interactivity using :hover.
-   No JavaScript needed!
-   ========================================== */
+/* COMPONENT: semantic article cards */
+.card {
+    /* display: block; */
+    /* ← try this: cards stack full-width, one per row */
+    display: inline-block;
+    /* ← active: cards sit side-by-side */
+    vertical-align: top;
+    /* width: 48%; */
+    /* ← BROKEN: try uncommenting this to see the wrap */
+    width: 47%;
+    /* ← FIX: 47% leaves room for the whitespace character */
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    padding: 20px;
+    margin: var(--gap);
+}
 
-/* The word that triggers the tooltip on hover */
+/* Forces all card images to the same square size regardless of original dimensions */
+.card-header img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    /* crops to fill the box without stretching */
+    display: block;
+    margin: 0 auto 10px;
+}
+
+
+/* COMPONENT: interactive tooltip (pure CSS, no JavaScript) */
 .tooltip {
     position: relative;
     /* establishes coordinate context for the tooltip popup */
